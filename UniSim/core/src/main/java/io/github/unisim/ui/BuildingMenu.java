@@ -94,7 +94,7 @@ public class BuildingMenu {
       buildingImages.get(i).addListener(new ClickListener() {
         @Override
         public void clicked(InputEvent e, float x, float y) {
-          if (world.selectedBuilding == buildings.get(buildingIndex)) {
+          if (world.selectedBuilding == buildings.get(buildingIndex) || GameState.paused) {
             world.selectedBuilding = null;
           } else {
             world.selectedBuilding = buildings.get(buildingIndex);
@@ -151,8 +151,11 @@ public class BuildingMenu {
    */
   public void update() {
     if (GameState.gameOver) {
-      buildingInfoLabel.setText("Game Over!");
-    } else if (world.selectedBuilding == null) {
+      buildingInfoLabel.setText("-- Game Over! --");
+    }else if (GameState.paused) {
+        buildingInfoLabel.setText("-- Game paused --");
+        world.selectedBuilding = null;
+    }else if (world.selectedBuilding == null) {
       buildingInfoLabel.setText("");
     }
   }

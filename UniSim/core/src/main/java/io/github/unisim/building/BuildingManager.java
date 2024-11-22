@@ -39,21 +39,23 @@ public class BuildingManager {
     boolean buildable = true;
     // we iterate over each tile within the search region and check
     // for any non-buildable tiles.
+    // additionally, we return false every time if the game is paused
+    // (buildings may not be placed while the game is paused).
     for (int x = btmLeft.x; x <= topRight.x && buildable; x++) {
-      for (int y = btmLeft.y; y <= topRight.y && buildable; y++) {
-        Cell currentCell = tileLayer.getCell(x, y);
-        if (currentCell == null) {
-          buildable = false;
-          continue;
-        }
+        for (int y = btmLeft.y; y <= topRight.y && buildable; y++) {
+            Cell currentCell = tileLayer.getCell(x, y);
+            if (currentCell == null) {
+                buildable = false;
+                continue;
+            }
 
-        TiledMapTile currentTile = currentCell.getTile();
-        if (!tileBuildable(currentTile)) {
-          buildable = false;
+            TiledMapTile currentTile = currentCell.getTile();
+            if (!tileBuildable(currentTile)) {
+                buildable = false;
+            }
         }
-      }
     }
-    if (!buildable) {
+    if (!buildable || GameState.paused) {
       return false;
     }
 
