@@ -8,9 +8,9 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class AssetTests {
     @Test
-    public void testMapAssetExists() {
+    public void testCanteenAssetExists() {
         HeadlessLauncher.main(new String[0]);
         assertTrue(Gdx.files.internal(BuildingMenu.buildings.get(0).texture).exists(),
-            "The asset for Map should be available");
+            "The asset for the canteen building should be available");
     }
 }
