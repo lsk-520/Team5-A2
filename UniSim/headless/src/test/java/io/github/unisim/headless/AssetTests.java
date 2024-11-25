@@ -9,6 +9,6 @@ public class AssetTests {
     @Test
     public void testLibraryExists() {
         HeadlessLauncher.main(new String[0]);
-        assertTrue(Gdx.files.internal("library.png").exists(), "The asset for the Library Building should be available");
+        assertTrue(Gdx.files.internal("buildings/library.png").exists(), "The asset for the Library Building should be available");
     }
 }
