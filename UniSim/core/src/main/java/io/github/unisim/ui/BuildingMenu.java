@@ -29,7 +29,7 @@ public class BuildingMenu {
   private World world;
   private ShapeActor bar = new ShapeActor(GameState.UISecondaryColour);
   private Table table;
-  private ArrayList<Building> buildings = new ArrayList<>();
+  public ArrayList<Building> buildings = new ArrayList<>();
   private ArrayList<Image> buildingImages = new ArrayList<>();
   private Label buildingInfoLabel = new Label(
       "", new Skin(Gdx.files.internal("ui/uiskin.json"))
