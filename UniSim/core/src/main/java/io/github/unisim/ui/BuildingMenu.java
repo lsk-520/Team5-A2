@@ -87,7 +87,7 @@ public class BuildingMenu {
     ));
 
     table = new Table();
-    // Add buldings to the table
+    // Add buildings to the table
     for (int i = 0; i < buildings.size(); i++) {
       buildingImages.add(new Image(buildings.get(i).texture));
       final int buildingIndex = i;
