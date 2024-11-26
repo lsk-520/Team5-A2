@@ -76,14 +76,24 @@ public class BuildingMenu {
         "Basketball Court"
     ));
     buildings.add(new Building(
-        new Texture(Gdx.files.internal("buildings/studentHousing.png")),
-        0.108f,
+        new Texture(Gdx.files.internal("buildings/stadium.png")),
+            0.0020f,
+            new Vector2(0f, 0f),
+            new Point(),
+            new Point(8,12),
+            false,
+            BuildingType.RECREATION,
+            "Stadium"
+    ));
+    buildings.add(new Building(
+        new Texture(Gdx.files.internal("buildings/accommodation.png")),
+        0.0025f,
         new Vector2(1.4f, -2.8f),
         new Point(),
         new Point(11, 11),
         false,
         BuildingType.SLEEPING,
-        "Student Accomodation"
+        "Student Accommodation"
     ));
 
     table = new Table();

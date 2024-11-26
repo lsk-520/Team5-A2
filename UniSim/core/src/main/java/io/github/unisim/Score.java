@@ -25,7 +25,12 @@ public class Score {
     }
 
     public void calculateScore() {
+        // building should be close together
+        // check that no building is far away
 
+        // event reactions
+
+        // achievements modifier
     }
 
 
