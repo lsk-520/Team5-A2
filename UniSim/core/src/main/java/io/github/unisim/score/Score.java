@@ -1,4 +1,4 @@
-package io.github.unisim;
+package io.github.unisim.score;
 
 public class Score {
     private int score;
@@ -24,13 +24,15 @@ public class Score {
         return String.valueOf(score) + "%";
     }
 
-    public void calculateScore() {
+    public void calculateScore(ScoreModifierType modifier) {
         // building should be close together
         // check that no building is far away
 
         // event reactions
 
         // achievements modifier
+
+
     }
 
 

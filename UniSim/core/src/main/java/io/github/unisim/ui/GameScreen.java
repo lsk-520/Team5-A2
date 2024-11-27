@@ -4,10 +4,11 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.InputMultiplexer;
 import com.badlogic.gdx.InputProcessor;
 import com.badlogic.gdx.Screen;
+import com.badlogic.gdx.scenes.scene2d.Event;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.utils.viewport.ScreenViewport;
 import io.github.unisim.GameState;
-import io.github.unisim.Score;
+import io.github.unisim.score.Score;
 import io.github.unisim.Timer;
 import io.github.unisim.world.UiInputProcessor;
 import io.github.unisim.world.World;
@@ -22,6 +23,7 @@ public class GameScreen implements Screen {
   private Stage stage = new Stage(new ScreenViewport());
   private InfoBar infoBar;
   private BuildingMenu buildingMenu;
+  private EventBar eventBar;
   private Timer timer;
   private Score score;
   private InputProcessor uiInputProcessor = new UiInputProcessor(stage);
@@ -37,6 +39,7 @@ public class GameScreen implements Screen {
     score = new Score(0);
     infoBar = new InfoBar(stage, timer, score, world);
     buildingMenu = new BuildingMenu(stage, world);
+    eventBar = new EventBar(stage, world);
 
     inputMultiplexer.addProcessor(GameState.fullscreenInputProcessor);
     inputMultiplexer.addProcessor(stage);
@@ -61,6 +64,7 @@ public class GameScreen implements Screen {
     stage.act(dt);
     infoBar.update();
     buildingMenu.update();
+    eventBar.update();
     stage.draw();
     if (GameState.gameOver) {
       world.zoom((world.getMaxZoom() - world.getZoom()) * 2f);
@@ -75,6 +79,7 @@ public class GameScreen implements Screen {
     stage.getViewport().update(width, height, true);
     infoBar.resize(width, height);
     buildingMenu.resize(width, height);
+    eventBar.resize(width, height);
     gameOverMenu.resize(width, height);
   }
 
@@ -94,6 +99,7 @@ public class GameScreen implements Screen {
       world.reset();
       infoBar.reset();
       buildingMenu.reset();
+      eventBar.reset();
     }
   }
 

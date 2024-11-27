@@ -11,7 +11,7 @@ import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.badlogic.gdx.utils.Align;
 import io.github.unisim.GameState;
-import io.github.unisim.Score;
+import io.github.unisim.score.Score;
 import io.github.unisim.Timer;
 import io.github.unisim.building.BuildingType;
 import io.github.unisim.world.World;
