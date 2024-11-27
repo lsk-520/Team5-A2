@@ -106,7 +106,8 @@ public class BuildingMenu {
         public void clicked(InputEvent e, float x, float y) {
           if (world.selectedBuilding == buildings.get(buildingIndex) || GameState.paused) {
             world.selectedBuilding = null;
-          } else {
+          }
+          else {
             world.selectedBuilding = buildings.get(buildingIndex);
             buildingInfoLabel.setText(world.selectedBuilding.name + " - Press 'R' to rotate");
             if (world.selectedBuilding.flipped) {
